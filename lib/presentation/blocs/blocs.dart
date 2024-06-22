@@ -3,3 +3,4 @@ export '02-counter/counter_cubit.dart';
 export '03-theme/theme_cubit.dart';
 
 export 'service_locator.dart';
+export '04-guest/guest_bloc.dart';
