@@ -12,6 +12,10 @@ void serviceLocatorInit() {
   getIt.registerSingleton( ThemeCubit() );
   
   getIt.registerSingleton( GuestBloc() );
+  
+  getIt.registerSingleton( PokemonBloc(
+    fetchPokemon: PokemonInformation.getPokemonName
+  ));
 
   /*
   final usernameCubit = getIt.registerSingleton( UsernameCubit() );

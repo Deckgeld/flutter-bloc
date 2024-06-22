@@ -32,18 +32,18 @@ class GuestBloc extends Bloc<GuestsEvent, GuestsState> {
               id: uuid.v4(),
               description: RandomGenerator.getRandomName(),
               completedAt: null),
-        ]
-            // HASTA AQUI, no hemos hecho nada nuevo, solo hemos creado un estado inicial con 5 invitados
-            )) {
+          // HASTA AQUI, no hemos hecho nada nuevo, solo hemos creado un estado inicial con 5 invitados
+        ])) {
+          
     //ESTOS SON LOS MANEJADORES DE EVENTOS, une los manejarores de eventos con los eventos
     //el primero maneja los filtros, el segundo agrega un invitado y tercero cambia el estado de un invitado
     on<SetCustomFilterEvent>((event, emit) {
+      //cambia el estado del filtro
       emit(state.copyWith(filter: event.newFilter));
     });
     on<AddGuest>(_addGuestHandler);
     on<ToggleGuest>(_toggleGuestHandler);
   }
-
 
   //ESTAS SON LAS INTERFACES QUE SE LLAMAN DESDE EL UI
   void changeFilter(GuestFilter newFilter) {
@@ -57,7 +57,6 @@ class GuestBloc extends Bloc<GuestsEvent, GuestsState> {
   void toggleGuest(String id) {
     add(ToggleGuest(id));
   }
-
 
   //ESTAS SON LAS IMPLEMENTACIONES DE LAS INTERFACES DE ARRIBA
   void _addGuestHandler(AddGuest event, Emitter<GuestsState> emit) {

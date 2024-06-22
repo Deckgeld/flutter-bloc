@@ -1,4 +1,3 @@
-import 'package:blocs_app/presentation/blocs/04-guest/guest_bloc.dart';
 import 'package:blocs_app/presentation/blocs/blocs.dart';
 import 'package:flutter/material.dart';
 import 'package:blocs_app/config/config.dart';
@@ -23,6 +22,8 @@ class BlocProviders extends StatelessWidget {
         BlocProvider(create: (context) => getIt<CounterCubit>() ),
         BlocProvider(create: (context) => getIt<ThemeCubit>() ),
         BlocProvider(create: (context) => getIt<GuestBloc>() ),
+        BlocProvider(create: (context) => getIt<PokemonBloc>() ),
+        
       ],
       child: const MyApp(),
     );
